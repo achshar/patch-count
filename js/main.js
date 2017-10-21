@@ -167,14 +167,14 @@ var canvas = {
 					}
 				};
 
-				// Go through eacn intermediate image canvas and set it's hieght and width
+				// Go through each intermediate image canvas and set it's height and width
 				var canvases = ['orignal', 'noiseReduction', 'color:red', 'color:green', 'color:blue', 'threshold:composite', 'threshold:red', 'threshold:green', 'threshold:blue'];
-				for(var i = 0; i < canvases.length; i++) {
-					$('canvas:'+canvases[i]).height = img.height,
-					$('canvas:'+canvases[i]).width = img.width;
+				for(var canvas of canvases) {
+					$('canvas:'+canvas).height = img.height,
+					$('canvas:'+canvas).width = img.width;
 				}
 
-				// Draw the image on the orignal image canvas
+				// Draw the image on the original image canvas
 				context.orignal.drawImage(img, 0, 0);
 
 				// Update all the other intermediate image canvases
