@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Achshar</title>
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+		<script src="js/main.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<button id="compact">&raquo;</button>
+		<section id="index">
+			<a href="#section:normal">Normal</a>
+			<a href="#section:noiseReduction">Noise Reduction</a>
+			<a href="#section:color">Color Split</a>
+			<div>
+				<a href="#section:color:red">Red</a>
+				<a href="#section:color:green">Green</a>
+				<a href="#section:color:blue">Blue</a>
+			</div>
+			<a href="#section:threshold">Threshold</a>
+			<div>
+				<a href="#section:threshold:red">Red</a>
+				<a href="#section:threshold:green">Green</a>
+				<a href="#section:threshold:blue">Blue</a>
+				<a href="#section:threshold:composite">Composite</a>
+			</div>
+		</section>
+		<section id="panel">
+			<div>
+				<strong>Select Image</strong><br>
+				<input type="file" id="input">
+			</div>
+			<div>
+				<strong>Test Images</strong><br>
+				<select id="test">
+					<option>Select One...</option>
+					<optgroup label="Celestial">
+						<option value="galaxies-small">Galaxies (Small)</option>
+						<option value="galaxies-large">Galaxies (Large) (Doesn't work)</option>
+						<option value="stars">Stars</option>
+					</optgroup>
+					<optgroup label="Other">
+						<option value="dots">Dots</option>
+						<option value="boxes">Boxes</option>
+					</optgroup>
+				</select>
+			</div>
+			<div>
+				<strong>Minimum Pixels</strong><br>
+				<input type="number" id="minimum" min="1" max="100" value="1" size="2"><br><br>
+
+				<strong>Threshold</strong><br><br>
+				Red <span class="number" id="menu:color:red:counter">(100)</span><br>
+				<input type="range" id="menu:color:red" value="100" min="0" max="255"><br>
+				Green <span class="number" id="menu:color:green:counter">(100)</span><br>
+				<input type="range" id="menu:color:green" value="100" min="0" max="255"><br>
+				Blue <span class="number" id="menu:color:blue:counter">(140)</span><br>
+				<input type="range" id="menu:color:blue" value="140" min="0" max="255"><br><br>
+
+				<label><input type="button" id="menu:invert" value="Invert Composite"></label>
+			</div>
+			<div>
+				<strong>Result</strong><br>
+				<span id="result:number"></span>
+				<progress id="result:progress" style="display:none" value="0" max="0"></progress>
+			</div><br>
+			<div><button id="rerun">Count</button></div>
+			<div id="status"></div>
+		</section>
+		<section id="content">
+			<h2 id="section:normal">Normal</h2>
+			<canvas id="canvas:orignal"></canvas>
+
+			<h2 id="section:noiseReduction">Noise Reduction</h2>
+			<canvas id="canvas:noiseReduction"></canvas>
+
+			<h2 id="section:color">Color-Split</h2>
+
+			<h3 id="section:color:red">Red</h3>
+			<canvas id="canvas:color:red"></canvas>
+
+			<h3 id="section:color:green">Green</h3>
+			<canvas id="canvas:color:green"></canvas>
+
+			<h3 id="section:color:blue">Blue</h3>
+			<canvas id="canvas:color:blue"></canvas>
+
+			<h2 id="section:threshold">Color threshold</h2>
+
+			<h3 id="section:threshold:red">Red</h3>
+			<canvas id="canvas:threshold:red"></canvas>
+
+			<h3 id="section:threshold:green">Green</h3>
+			<canvas id="canvas:threshold:green"></canvas>
+
+			<h3 id="section:threshold:blue">Blue</h3>
+			<canvas id="canvas:threshold:blue"></canvas>
+
+			<h3 id="section:threshold:composite">Composite</h3>
+			<canvas id="canvas:threshold:composite"></canvas>
+			</div>
+		<section>
+	</body>
+</html>

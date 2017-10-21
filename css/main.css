@@ -1,0 +1,92 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	cursor: default;
+	font-family: Arial, sans-serif;
+}
+#panel {
+	position: fixed;
+	right: 0px;
+	width: 250px;
+	opacity: 0.6;
+	bottom: 0px;
+	top: 0px;
+	background-color: #eee;
+	border-left: #999 1px solid;
+	transition: transform 500ms, opacity 500ms;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 1;
+	font-size: 14px;
+}
+#panel: hover {
+	opacity: 1;
+}
+#panel .number {
+	font-size: 12px;
+}
+#panel #status {
+	border-top: 1px solid #999;
+	padding: 5px 10px;
+	font-size: 12px;
+}
+#panel #status:before {
+	content: "Status: ";
+	color: #666;
+	padding-right: 5px;
+}
+#panel div {
+	padding: 10px 5px;
+}
+#panel input[type=range] {
+	width: 100%;
+}
+#compact {
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+	z-index: 2;
+}
+#content {
+	position: relative;
+}
+#content canvas {
+	border: 1px solid #999;
+	margin-right: 8px;
+}
+#index {
+	position: fixed;
+	opacity: 0.6;
+	right: 5px;
+	top: 5px;
+	background-color: #eee;
+	border: 1px solid #999;
+	font-size: 14px;
+	transition: transform 500ms, opacity 500ms;
+	transform: translateX(-251px);
+	z-index: 1;
+}
+#index:hover {
+	opacity: 1;
+}
+#index a {
+	text-decoration: none;
+	display: block;
+	padding: 6px 10px;
+}
+#index a: hover {
+	background-color: #ddd;
+}
+#index div a {
+	padding: 3px 20px;
+}
